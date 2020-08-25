@@ -56,11 +56,11 @@
   <div class="box">
     <g-input value="张三" :disable="true"></g-input>
     <g-input value="李四" read-only></g-input>
-    <g-input value="小五"></g-input>
+    <g-input value="小五" @change="inputChange"></g-input>
   </div>
-<div class="box">
-  <g-input value="五" error="请输入两个以上的名字"></g-input>
-</div>
+  <div class="box">
+    <g-input value="五" error="请输入两个以上的名字"></g-input>
+  </div>
 
 </div>
 <script src="src/app.js"></script>
