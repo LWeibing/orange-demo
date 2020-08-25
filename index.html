@@ -56,7 +56,9 @@
   <div class="box">
     <g-input value="张三" :disable="true"></g-input>
     <g-input value="李四" read-only></g-input>
-    <g-input value="小五" @change="inputChange"></g-input>
+    <g-input value="小五" v-model="message"></g-input>
+    <span>{{message}}</span>
+    <button @click="message+=1">+1</button>
   </div>
   <div class="box">
     <g-input value="五" error="请输入两个以上的名字"></g-input>
