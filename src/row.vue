@@ -1,18 +1,27 @@
 <template>
-  <div class="row" :style="{marginRight:-gutter/2+'px',marginLeft:-gutter/2+'px'}">
+  <div class="row" :style="rowStyle">
     <slot></slot>
   </div>
 </template>
 <script>
   export default {
-    name: 'OrangeRow',
+    name: "OrangeRow",
     props: {
       gutter: {
-        type: [Number,String]
+        type: [Number, String]
+      }
+    },
+    computed: {
+      rowStyle() {
+        let {gutter} = this
+        return {
+          marginRight: -gutter / 2 + "px",
+          marginLeft: -gutter / 2 + "px"
+        }
       }
     },
     mounted() {
-      this.$children.forEach((vm)=>{
+      this.$children.forEach((vm) => {
         vm.gutter = this.gutter
       })
     }
