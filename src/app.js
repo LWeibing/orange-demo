@@ -33,10 +33,13 @@ new Vue({
   },
   methods: {
     showToast(){
-      this.$toast('我是 message')
     }
   },
   created(){
+    this.$toast('我是message',{
+
+    })
+
   },
 })
 
