@@ -52,7 +52,6 @@
           ...createClasses(narrowPc,'narrow-pc-'),
           ...createClasses(pc,'pc-'),
           ...createClasses(widePc,'wide-pc-')
-
         ]
       },
       colStyle() {
