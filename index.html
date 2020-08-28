@@ -36,10 +36,23 @@
     .box {
       margin: 20px;
     }
+    .demo {
+      border: 1px solid red;
+      min-height: 100px;
+    }
   </style>
 </head>
 <body>
 <div id="app">
+  <g-layout style="height: 100vh;">
+    <g-header class="demo">header</g-header>
+    <g-layout>
+      <g-sider class="demo">sider</g-sider>
+      <g-content class="demo">content</g-content>
+    </g-layout>
+    <g-footer class="demo">footer</g-footer>
+  </g-layout>
+  <hr>
   <g-row gutter="20" >
     <g-col>1</g-col>
     <g-col>2</g-col>
