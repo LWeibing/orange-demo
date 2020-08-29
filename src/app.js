@@ -39,8 +39,7 @@ new Vue({
         closeButton: {
           text: '关闭'
         },
-        autoClose:false,
-        autoCloseDelay:3
+        autoClose:3,
       })
     }
   },
