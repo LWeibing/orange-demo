@@ -36,8 +36,14 @@ new Vue({
     }
   },
   created(){
-    this.$toast('<storng>文字</storng>',{
-      enableHtml:true
+    this.$toast('这是一条消息提示',{
+      position: 'middle',
+      enableHtml:false,
+      closeButton: {
+        text: '关闭'
+      },
+      autoClose:false,
+      autoCloseDelay:3
     })
 
   },
