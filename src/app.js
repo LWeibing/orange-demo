@@ -34,7 +34,7 @@ new Vue({
   methods: {
     showToast(){
       this.$toast('这是一条消息提示',{
-        position: 'top',
+        position: 'bottom',
         enableHtml:false,
         closeButton: {
           text: '关闭'
