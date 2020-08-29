@@ -36,8 +36,8 @@ new Vue({
     }
   },
   created(){
-    this.$toast('我是message',{
-
+    this.$toast('<storng>文字</storng>',{
+      enableHtml:true
     })
 
   },
