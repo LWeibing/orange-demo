@@ -33,8 +33,23 @@
 <body>
 <div id="app">
 
-  <button @click="showToast">点击</button>
-
+<g-tabs :selected.sync="selectedTab">
+  <g-tabs-head>
+    <template slot="actions">
+      <button>设置</button>
+    </template>
+    <g-tabs-item  name="tab1">
+      <g-icon name="setting"></g-icon>Tab 1
+    </g-tabs-item>
+    <g-tabs-item  name="tab2" disabled>Tab 2</g-tabs-item>
+    <g-tabs-item  name="tab3">Tab 3</g-tabs-item>
+  </g-tabs-head>
+  <g-tabs-body>
+    <g-tabs-pane  name="tab1">Content of Tab Pane 1</g-tabs-pane>
+    <g-tabs-pane  name="tab2">Content of Tab Pane 2</g-tabs-pane>
+    <g-tabs-pane  name="tab3">Content of Tab Pane 3</g-tabs-pane>
+  </g-tabs-body>
+</g-tabs>
 </div>
 <script src="src/app.js"></script>
 </body>

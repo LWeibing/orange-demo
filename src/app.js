@@ -1,16 +1,22 @@
 import Vue from "vue"
-import Button from "./button.vue"
-import Icon from "./icon.vue"
-import ButtonGroup from "./button-group"
+import Button from "./button/button.vue"
+import Icon from "./button/icon.vue"
+import ButtonGroup from "./button/button-group"
 import Input from './input'
-import Col from  './col'
-import Row from  './row'
-import Content from  './content'
-import Sider from  './sider'
-import Footer from  './footer'
-import Header from  './header'
-import Layout from  './layout'
+import Col from './grid/col'
+import Row from './grid/row'
+import Content from './grid/content'
+import Sider from './grid/sider'
+import Footer from './grid/footer'
+import Header from './grid/header'
+import Layout from './grid/layout'
 import plugin from "./plugin"
+import Tabs from "./tabs/tabs"
+import TabsHead from "./tabs/tabs-head"
+import TabsBody from "./tabs/tabs-body"
+import TabsPane from "./tabs/tabs-pane"
+import TabsItem from "./tabs/tabs-item"
+
 
 Vue.component("g-button", Button)
 Vue.component("g-icon", Icon)
@@ -24,12 +30,17 @@ Vue.component('g-footer',Footer)
 Vue.component('g-sider',Sider)
 Vue.component('g-content',Content)
 Vue.use(plugin)
+Vue.component('g-tabs',Tabs)
+Vue.component('g-tabs-head',TabsHead)
+Vue.component('g-tabs-body',TabsBody)
+Vue.component('g-tabs-item',TabsItem)
+Vue.component('g-tabs-pane',TabsPane)
+
 
 new Vue({
   el: "#app",
   data: {
-    loading1: true,
-    message: 'hi'
+    selectedTab: 'tab1'
   },
   methods: {
     showToast(){
