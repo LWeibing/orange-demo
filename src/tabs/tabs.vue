@@ -13,28 +13,32 @@
         eventBus: new Vue()
       }
     },
+    provide(){
+      return {
+        eventBus: this.eventBus
+      }
+    },
     props: {
       selected:{
         type: String,
         required: true
       },
       direction: {
-        type :String,
+        type: String,
         default: 'horizontal',
         validator(value) {
           return ['horizontal','vertical'].indexOf(value)>=0
         }
       },
-      provide(){
-        return {
-          eventBus: this.eventBus
-        }
+      mounted(){
+        this.eventBus.$emit('update:selected',this.selected)
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
+
   .tabs{
 
   }
