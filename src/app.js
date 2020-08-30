@@ -52,6 +52,9 @@ new Vue({
         },
         autoClose:3,
       })
+    },
+    yyy(data){
+      console.log('data')
     }
   },
   created(){

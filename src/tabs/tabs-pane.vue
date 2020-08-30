@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-pane" v-if="active">
+  <div class="tabs-pane" :class="classes" v-if="active">
     <slot></slot>
   </div>
 </template>
@@ -16,7 +16,7 @@
     props: {
       name: {
         type: [String,Number],
-        require: true
+        required: true
       }
     },
     computed: {
@@ -36,6 +36,6 @@
 
 <style lang="scss" scoped>
   .tabs-pane{
-
+    padding: 1em;
   }
 </style>

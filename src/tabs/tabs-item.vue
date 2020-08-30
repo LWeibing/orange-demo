@@ -1,15 +1,14 @@
 <template>
-  <div class="tabs-item" @click="xxx" :class="classes">
+  <div class="tabs-item" @click="onClick" :class="classes" :data-name="name">
     <slot></slot>
   </div>
 </template>
-
 <script>
   export default {
     name: 'OrangeTabsItem',
     inject: ['eventBus'],
-    data(){
-      return{
+    data () {
+      return {
         active: false
       }
     },
@@ -20,39 +19,51 @@
       },
       name: {
         type: [String,Number],
-        require: true
+        required: true
       }
     },
-    created() {
-      this.eventBus.$on('update:selected',(name)=>{
-        this.active = name === this.name;
-      })
-    },
     computed: {
-      classes(){
+      classes () {
         return {
-          active: this.active
+          active: this.active,
+          disabled: this.disabled
         }
       }
     },
-    methods: {
-      xxx(){
-        this.eventBus.$emit('update:selected',this.name)
+    created () {
+      if (this.eventBus) {
+        this.eventBus.$on('update:selected', (name) => {
+          this.active = name === this.name;
+        })
       }
     },
+    methods: {
+      onClick () {
+        if (this.disabled) { return }
+        this.eventBus && this.eventBus.$emit('update:selected', this.name, this)
+        this.$emit('click', this)
+      }
+    }
   }
 </script>
-
 <style lang="scss" scoped>
-  .tabs-item{
-    padding: 0 1em;
+  $color: rgb(255,117,0);
+  $disabled-text-color: grey;
+  .tabs-item {
     flex-shrink: 0;
+    padding: 0 1em;
     cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
     &.active {
-      color: rgb(255,117,0);
+      color: $color;
+      font-weight: bold;
     }
-    &:hover{
-      color: rgb(255,164,0);
+    &.disabled {
+      color: $disabled-text-color;
+      cursor: not-allowed;
     }
   }
 </style>
