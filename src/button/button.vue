@@ -53,6 +53,7 @@
     border:1px solid var(--border-color);
     &:hover {
       border-color: var(--border-color-hover);
+      cursor: pointer;
     }
     &:active {
       background: var(--button-active-bg);
