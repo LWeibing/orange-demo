@@ -14,7 +14,7 @@
     name: 'OrangeCollapseItem',
     data(){
       return{
-        open:false
+        open:false,
       }
     },
     props: {
@@ -25,32 +25,24 @@
       name: {
         type: String,
         require: true
-      }
+      },
     },
     inject: ['eventBus'],
     mounted(){
-      this.eventBus && this.eventBus.$on('update:selected',(name)=>{
-        if(name!== this.name){
-          this.close()
-        }else {
-          this.show()
-        }
+      this.eventBus && this.eventBus.$on('update:selected',(names)=>{
+        this.open = names.indexOf(this.name) >= 0;
+
       })
     },
     methods: {
       toggle(){
         if(this.open){
-          this.open = false
+          this.eventBus && this.eventBus.$emit('update:removeSelected',this.name)
         }else {
-          this.eventBus && this.eventBus.$emit('update:selected',this.name)
+          this.eventBus && this.eventBus.$emit('update:addSelected',this.name)
         }
       },
-      close(){
-        this.open = false
-      },
-      show(){
-        this.open = true
-      }
+
     }
   }
 </script>
@@ -66,6 +58,7 @@
       align-items: center;
       min-height: 32px;
       padding: 0 8px;
+      cursor: pointer;
     }
     &:first-child{
       >.title{
