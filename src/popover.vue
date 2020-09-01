@@ -157,10 +157,12 @@
       }
       &:before{
         top: 100%;
+        border-bottom:none;
         border-top-color: black;
       }
       &::after{
         top: calc(100% - 1px);
+        border-bottom:none;
         border-top-color: white;
       }
     }
@@ -171,10 +173,12 @@
       }
       &:before{
         bottom: 100%;
+        border-top:none;
         border-bottom-color: black;
       }
       &::after{
         bottom: calc(100% - 1px);
+        border-top:none;
         border-bottom-color: white;
       }
     }
@@ -187,10 +191,12 @@
       }
       &:before{
         border-left-color: black;
+        border-right:none;
         left: 100%;
       }
       &::after{
         left: calc(100% - 1px);
+        border-right:none;
         border-left-color: white;
       }
     }
@@ -202,10 +208,12 @@
       }
       &:before{
         right: 100%;
+        border-left:none;
         border-right-color: black;
       }
       &::after{
         right: calc(100% - 1px);
+        border-left:none;
         border-right-color: white;
       }
     }
