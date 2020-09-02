@@ -2,24 +2,36 @@
 title: Grid 栅格
 sidebarDepth: 2
 ---
-# Button按钮 
-常用的操作按钮
+# Grid 栅格 
+24 栅格系统
 
-## 简单用法
+## 基础栅格
 <ClientOnly>
-<button-demo/>
+<grid-demo/>
 </ClientOnly>
 
-## 组合用法
+## 左右偏移
 <ClientOnly>
-<button-group-demo></button-group-demo>
+<grid-offset/>
 </ClientOnly>
 
-## Button 属性
+## 区块间隔
+<ClientOnly>
+<grid-gutter/>
+</ClientOnly>
 
-|     属性     |   说明   |  类型   |                可选值                 | 默认值 |
-| :----------: | :------: | :-----: | :-----------------------------------: | :----: |
-|     icon     |   图标   | String  | setting、left、right、error、success |    —    |
-| iconPosition | 图标位置 | String  |              left、right              |  left  |
-|   loading    | 加载状态 | Boolean |              true、false              | false  |
-|   disabled   | 禁用状态 | Boolean |              true、false              | false  |
+## Row 属性
+|  属性   |   说明   |      类型      |       可选值        | 默认值 |
+| :-----: | :------: | :------------: | :-----------------: | :----: |
+| gutter  |   间距   | string、number |      任意数字       |   0    |
+| align | 对齐方式 |     string     | left、center、right |  left  |
+
+## Col 属性
+|   属性   |        说明        |      类型      |         可选值          | 默认值 |
+| :------: | :----------------: | :------------: | :---------------------: | :----: |
+|   span   |   栅格占位格数   | string、number |          1-24           |  —  |
+|  offset  | 栅格左侧的间隔格数 | string、number |          1-24           |  —  |
+|   ipad   |   ipad响应式布局   | number、object | 数字或{span,offset}对象 |  —  |
+| narrowPc |  窄屏幕响应式布局  | number、object | 数字或{span,offset}对象 |   —  |
+|    pc    | 普通电脑响应式布局 | number、object | 数字或{span,offset}对象 |   —  |
+|  widePc  |   宽屏响应式布局   | number、object | 数字或{span,offset}对象 |  —  |
