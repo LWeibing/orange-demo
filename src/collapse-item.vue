@@ -1,6 +1,6 @@
 <template>
   <div class="collapseItem">
-    <div class="title" @click="toggle">
+    <div class="title" @click="toggle" :class="{active}">
       {{title}}
     </div>
     <div class="content" v-if="open">
@@ -15,6 +15,7 @@
     data(){
       return{
         open:false,
+        active: false
       }
     },
     props: {
@@ -31,7 +32,6 @@
     mounted(){
       this.eventBus && this.eventBus.$on('update:selected',(names)=>{
         this.open = names.indexOf(this.name) >= 0;
-
       })
     },
     methods: {
@@ -59,6 +59,11 @@
       min-height: 32px;
       padding: 0 8px;
       cursor: pointer;
+      &.active {
+        >.icon {
+          transform: rotate(90deg);
+        }
+      }
     }
     &:first-child{
       >.title{
