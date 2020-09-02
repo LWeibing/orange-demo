@@ -6,6 +6,9 @@ module.exports = {
     logo: 'assets/logo.svg',
     nav:[
       {text: '主页',link: '/'},
+      {text: '文档',link: '/components/button'},
+      {text: 'github',link: 'https://github.com/fzh5785/orange-demo'},
+      {text: '博客',link: 'https://juejin.im/user/3069492197855037/posts'},
     ],
     sidebar: [
       {

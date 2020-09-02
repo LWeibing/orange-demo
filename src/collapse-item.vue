@@ -1,7 +1,8 @@
 <template>
   <div class="collapseItem">
-    <div class="title" @click="toggle" :class="{active}">
-      {{title}}
+    <div class="title" @click="toggle">
+      <g-icon :name="direction"></g-icon>
+      <span>{{title}}</span>
     </div>
     <div class="content" v-if="open">
       <slot></slot>
@@ -15,7 +16,6 @@
     data(){
       return{
         open:false,
-        active: false
       }
     },
     props: {
@@ -27,6 +27,11 @@
         type: String,
         require: true
       },
+    },
+    computed:{
+      direction(){
+        return this.open ? 'down' : 'right'
+      }
     },
     inject: ['eventBus'],
     mounted(){
@@ -59,11 +64,6 @@
       min-height: 32px;
       padding: 0 8px;
       cursor: pointer;
-      &.active {
-        >.icon {
-          transform: rotate(90deg);
-        }
-      }
     }
     &:first-child{
       >.title{
@@ -78,7 +78,7 @@
       }
     }
     >.content{
-      padding: 8px;
+      padding: 24px;
     }
   }
 </style>
