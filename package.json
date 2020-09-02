@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "git-open": "^2.1.0",
     "vue": "^2.6.12",
     "vue-hot-reload-api": "^2.3.4",
     "vue-property-decorator": "^9.0.0"

@@ -43,7 +43,7 @@
   $border-radius:4px;
   $color:#333;
   $border-color:#999;
-  $border-color-hover:#666;
+  $border-color-hover:rgb(255,164,0);
   @keyframes spin {
     0% {transform: rotate(0deg) ;}
     100%{transform: rotate(360deg)}
@@ -59,9 +59,13 @@
     background: $button-bg;
     border-radius: $border-radius;
     border:1px solid $border-color;
+
     &:hover {
       border-color: $border-color-hover;
       cursor: pointer;
+      &:disabled{
+        cursor: not-allowed;
+      }
     }
     &:active {
       background: $button-active-bg;
