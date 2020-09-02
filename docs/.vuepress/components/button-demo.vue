@@ -1,8 +1,7 @@
 <template>
   <div>
     <div style="padding-top: 16px;">
-      <h3>用法</h3>
-      <p><strong>预览</strong></p>
+      <p><strong>基础的按钮用法</strong></p>
       <div class="wrapper">
         <g-button>默认按钮</g-button>
         <g-button :loading="isLoading" @click="isLoading = !isLoading">点击按钮</g-button>

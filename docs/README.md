@@ -9,7 +9,7 @@ features:
 - title: Orange UI
   details: Orange UI 是一套基于 Vue2.0 的简易的UI框架，它包含一些常用的布局和控件，帮助开发者快速构筑移动端和PC端界面。
 - title: Vue
-  details: Vue 是一套用于构建用户界面的渐进式JavaScript框架。可以快速帮助开发者实现响应的数据绑定和组合的视图组件。
+  details: Vue.js是一个用于创建用户界面的开源JavaScript框架，也是一个创建单页应用的Web应用框架。
 - title: Sass
-  details: Sass 是一种 CSS 的预编译语言，能够帮助复杂的样式表更有条理， 并且易于在项目内部或跨项目共享设计。
+  details: Sass 是一款强化 CSS 的辅助工具，它在 CSS 语法的基础上增加了变量、嵌套、混合、导入等高级功能，这些拓展令 CSS 更加强大与优雅。
 ---

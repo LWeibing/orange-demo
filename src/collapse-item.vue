@@ -11,8 +11,12 @@
 </template>
 
 <script >
+  import Icon from './button/icon'
   export default  {
     name: 'OrangeCollapseItem',
+    components: {
+      'g-icon' : Icon
+    },
     data(){
       return{
         open:false,
@@ -64,6 +68,7 @@
       min-height: 32px;
       padding: 0 8px;
       cursor: pointer;
+      background-color: rgb(250,250,250);
     }
     &:first-child{
       >.title{

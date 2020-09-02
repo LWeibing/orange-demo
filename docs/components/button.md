@@ -2,7 +2,7 @@
 title: Button 按钮
 sidebarDepth: 2
 ---
-# Button按钮 
+# Button 按钮 
 常用的操作按钮
 
 ## 简单用法

@@ -1,25 +1,28 @@
 ---
-title: Button 按钮
+title: Collapse 折叠面板
 sidebarDepth: 2
 ---
-# Button按钮 
-常用的操作按钮
+# Collapse 折叠面板 
+可以折叠/展开的内容区域。
 
-## 简单用法
+## 基础用法
 <ClientOnly>
-<button-demo/>
+<collapse-simple/>
 </ClientOnly>
 
-## 组合用法
+## 手风琴
 <ClientOnly>
-<button-group-demo></button-group-demo>
+<collapse-single/>
 </ClientOnly>
 
-## Button 属性
+## Collapse 属性
+|   属性   |     说明     |  类型   |   可选值    | 默认值 |
+| :------: | :----------: | :-----: | :---------: | :----: |
+| selected |  默认选中项  |  Array  | 任意字符串  |   ['1']   |
+|  single  | 是否手风琴模式 | boolean | true、false | false  |
 
-|     属性     |   说明   |  类型   |                可选值                 | 默认值 |
-| :----------: | :------: | :-----: | :-----------------------------------: | :----: |
-|     icon     |   图标   | String  | setting、left、right、error、success |    —    |
-| iconPosition | 图标位置 | String  |              left、right              |  left  |
-|   loading    | 加载状态 | Boolean |              true、false              | false  |
-|   disabled   | 禁用状态 | Boolean |              true、false              | false  |
+## CollapseItem 属性
+| 属性  |       说明       |  类型  |   可选值   | 默认值 |
+| :---: | :--------------: | :----: | :--------: | :----: |
+| title |       标题内容       | string | 任意字符串 |  —  |
+| name  | 唯一标志符 | string | 任意字符串 |  —  |

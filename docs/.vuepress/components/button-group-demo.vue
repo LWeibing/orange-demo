@@ -1,8 +1,7 @@
 <template>
   <div>
     <div style="padding-top: 16px;">
-      <h3>按钮组</h3>
-      <p><strong>预览</strong></p>
+      <p><strong>按钮组</strong></p>
       <g-button-group class="wrapper">
         <g-button icon="left">上一页</g-button>
         <g-button>全部</g-button>
@@ -12,7 +11,7 @@
       <p>
         <strong>代码</strong>
       </p>
-      <pre><code>{{groupContent}}</code></pre>
+      <pre><code>{{content}}</code></pre>
     </div>
   </div>
 </template>
@@ -27,7 +26,7 @@
     },
     data () {
       return {
-        groupContent: `
+        content: `
           <g-button-group>
           <g-button icon="left">上一页</g-button>
           <g-button>全部</g-button>
