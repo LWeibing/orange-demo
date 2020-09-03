@@ -2,7 +2,7 @@
   <div>
     <div style="padding-top: 16px;">
       <p><strong>按钮组</strong></p>
-      <g-button-group class="wrapper">
+      <g-button-group class="global">
         <g-button icon="left">上一页</g-button>
         <g-button>全部</g-button>
         <g-button icon="right" iconPosition="right">下一页</g-button>
@@ -28,9 +28,9 @@
       return {
         content: `
           <g-button-group>
-          <g-button icon="left">上一页</g-button>
-          <g-button>全部</g-button>
-          <g-button icon="right" iconPosition="right">下一页</g-button>
+            <g-button icon="left">上一页</g-button>
+            <g-button>全部</g-button>
+            <g-button icon="right" iconPosition="right">下一页</g-button>
           </g-button-group>
       `.replace(/^ {8}/gm, '').trim(),
       }
@@ -39,7 +39,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .wrapper {
+  .global {
     border: 1px solid #ebebeb;
     border-radius: 3px;
     display: flex;

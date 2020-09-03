@@ -2,7 +2,7 @@
   <div>
     <div style="padding-top: 16px;">
       <p><strong>基础的按钮用法</strong></p>
-      <div class="wrapper">
+      <div class="global">
         <g-button>默认按钮</g-button>
         <g-button :loading="isLoading" @click="isLoading = !isLoading">点击按钮</g-button>
         <g-button disabled>禁用按钮</g-button>
@@ -44,7 +44,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .wrapper {
+  .global {
     border: 1px solid #ebebeb;
     border-radius: 3px;
     display: flex;

@@ -2,7 +2,7 @@
   <div>
     <div style="padding-top: 16px;">
       <p><strong>使用单一分栏创建基础的栅格布局。</strong></p>
-      <div class="wrapper">
+      <div class="global">
       <g-row>
         <g-col :span="24">
           <div class="content bg-color-dark">24</div>
@@ -49,28 +49,30 @@
       return {
         content: `
           <g-row>
-          <g-col :span="24">
-            <div class="content bg-color-dark">24</div>
-          </g-col>
+            <g-col :span="24">
+              <div class="content bg-color-dark">24</div>
+            </g-col>
           </g-row>
+
           <g-row>
-          <g-col :span="12">
-            <div class="content bg-color-dark">12</div>
-          </g-col>
-          <g-col :span="12">
-            <div class="content bg-color">12</div>
-          </g-col>
+            <g-col :span="12">
+              <div class="content bg-color-dark">12</div>
+            </g-col>
+            <g-col :span="12">
+              <div class="content bg-color">12</div>
+            </g-col>
           </g-row>
+
           <g-row>
-          <g-col :span="8">
-            <div class="content bg-color-dark">8</div>
-          </g-col>
-          <g-col :span="8">
-            <div class="content bg-color">8</div>
-          </g-col>
-          <g-col :span="8">
-            <div class="content bg-color-dark">8</div>
-          </g-col>
+            <g-col :span="8">
+              <div class="content bg-color-dark">8</div>
+            </g-col>
+            <g-col :span="8">
+              <div class="content bg-color">8</div>
+            </g-col>
+            <g-col :span="8">
+              <div class="content bg-color-dark">8</div>
+            </g-col>
           </g-row>
       `.replace(/^ {8}/gm, '').trim() ,
       }
@@ -98,7 +100,7 @@
     margin: 10px 0;
     height: 36px;
   }
-  .wrapper {
+  .global {
     border: 1px solid #ebebeb;
     border-radius: 3px;
     align-items: center;
