@@ -15,5 +15,5 @@ sidebarDepth: 2
 ## Popover 属性
 |   属性   |   说明   |  类型  |          可选值          | 默认值 |
 | :------: | :------: | :----: | :----------------------: | :----: |
-| position |   位置   | string | left、right、top、bottom |  top   |
-| trigger  | 激活方式 | string |       click、hover       | click  |
+| position |   位置   | String | left、right、top、bottom |  top   |
+| trigger  | 激活方式 | String |       click、hover       | click  |

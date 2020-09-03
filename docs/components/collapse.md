@@ -19,10 +19,10 @@ sidebarDepth: 2
 |   属性   |     说明     |  类型   |   可选值    | 默认值 |
 | :------: | :----------: | :-----: | :---------: | :----: |
 | selected |  默认选中项  |  Array  | 任意字符串  |   ['1']   |
-|  single  | 是否手风琴模式 | boolean | true、false | false  |
+|  single  | 是否手风琴模式 | Boolean | true、false | false  |
 
 ## CollapseItem 属性
 | 属性  |       说明       |  类型  |   可选值   | 默认值 |
 | :---: | :--------------: | :----: | :--------: | :----: |
-| title |       标题内容       | string | 任意字符串 |  —  |
-| name  | 唯一标志符 | string | 任意字符串 |  —  |
+| title |       标题内容       | String | 任意字符串 |  —  |
+| name  | 唯一标志符 | String | 任意字符串 |  —  |

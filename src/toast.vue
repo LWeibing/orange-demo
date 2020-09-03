@@ -1,161 +1,193 @@
 <template>
   <div class="wrapper" :class="toastClasses">
-    <div class="toast" ref="toast" >
+    <div class="toast" ref="toast">
       <div class="message">
         <slot v-if="!enableHtml"></slot>
         <div v-else v-html="$slots.default[0]"></div>
       </div>
-      <div class="line" ref="line"></div>
-      <span class="close" v-if="closeButton" @click="onClickClose">
-        {{closeButton.text}}
-    </span>
+      <div class="closeWrapper" v-if="isCloseButton">
+        <div class="line" ref="line"></div>
+        <span class="close" v-if="closeButton" @click="onClickClose">
+          {{closeButton.text}}
+        </span>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+  import Vue from "vue";
+  Vue.prototype.$toast = function () {
+    console.log("我是 toast");
+  };
+  //构造组件的选项
   export default {
     name: "OrangeToast",
     props: {
       autoClose: {
-        type: [Boolean,Number],
-        default: 5,
-        validator(value){
-          return value === false || typeof value === 'number'
-        }
+        type: [Boolean, Number],
+        default: 3,
+        validator(value) {
+          return value === false || typeof value === "number";
+        },
+      },
+      isCloseButton: {
+        type: Boolean,
+        default() {
+          return false;
+        },
       },
       closeButton: {
         type: Object,
         default() {
           return {
             text: "关闭",
-            callback: undefined
-          }
-        }
+            callback: undefined,
+          };
+        },
       },
       enableHtml: {
         type: Boolean,
-        default: false
+        default: false,
       },
       position: {
         type: String,
         default: "top",
         validator(value) {
-          return ["top", "middle", "bottom"].indexOf(value) >= 0
-        }
-      }
+          return ["top", "middle", "bottom"].indexOf(value) >= 0;
+        },
+      },
     },
-    created() {
+    mounted() {
+      this.delayClose();
+      this.updateStyle();
     },
     computed: {
       toastClasses() {
         return {
-          [`position-${this.position}`]: true
-        }
-      }
+          [`position-${this.position}`]: true,
+        };
+      },
     },
     methods: {
-      execAutoClose() {
-        if (this.autoClose) {
-          setTimeout(() => {
-            this.close()
-          }, this.autoClose * 1000)
-        }
-      },
-      updateStyles() { //白线高度等于wrapper高度
+      updateStyle() {
         this.$nextTick(() => {
-          this.$refs.line.style.height =
-            `${this.$refs.toast.getBoundingClientRect().height}px`
-        })
+          if (this.$refs.line) {
+            this.$refs.line.style.height =
+              this.$refs.toast.getBoundingClientRect().height + "px";
+          }
+        });
+      },
+      delayClose() {
+        setTimeout(() => {
+          if (this.autoClose) {
+            this.close();
+          }
+        }, this.autoClose * 1000);
       },
       close() {
-        this.$el.remove()
-        this.$emit("close")
-        this.$destroy()
+        this.$el.remove();
+        this.$emit("close");
+        this.$destroy();
       },
       onClickClose() {
-        this.close()
+        this.close();
         if (this.closeButton && typeof this.closeButton.callback === "function") {
-          this.closeButton.callback(this)
+          this.closeButton.callback();
         }
-      }
+      },
     },
-    mounted() {
-      this.updateStyles()
-      this.execAutoClose()
+  };
+</script>
+
+<style lang="scss" scoped>
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
-</script>
-<style lang="scss" scoped>
-  $font-size: 14px;
-  $toast-height: 40px;
-  $toast-bg: rgba(0, 0, 0, 0.75);
-  @keyframes slide-up {
-    0% {opacity: 0;transform: translateY(100%)}
-    100% {opacity: 1;transform: translateY(0%)}
-  }
   @keyframes slide-down {
-    0% {opacity: 0;transform: translateY(-100%)}
-    100% {opacity: 1;transform: translateY(0%)}
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
   }
-  @keyframes fade-in {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
   }
   .wrapper {
+    z-index: 30;
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    $animation-time:500ms;
     &.position-top {
       top: 0;
-      .toast{
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        animation: slide-down $animation-time;
-      }
-    }
-    &.position-bottom {
-      bottom: 0;
-      .toast{
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        animation: slide-up $animation-time;
+      .toast {
+        animation: slide-down 1s;
       }
     }
     &.position-middle {
       top: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      animation: fade-in $animation-time;
+      transform: translate(-50%, -50%);
+      .toast {
+        animation: fade-in 1s;
+      }
+    }
+    &.position-bottom {
+      bottom: 0;
+      .toast {
+        animation: slide-up 1s;
+      }
     }
   }
   .toast {
-    font-size: $font-size;
-    min-height: $toast-height;
+    font-size: 14px;
+    min-height: 40px;
     line-height: 1.8;
+    top: 0;
+    border-radius: 4px;
+    color: white;
     display: flex;
     align-items: center;
-    background: $toast-bg;
-    border-radius: 4px;
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .5);
-    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
     padding: 0 16px;
 
     .message {
       padding: 8px 0;
+      max-width: 400px;
+      word-wrap: break-word;
     }
-
-    .close {
-      padding-left: 16px;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    .line {
-      border-left: 1px solid #666;
-      height: 100%;
-      margin-left: 16px;
+    .closeWrapper {
+      display: flex;
+      align-items: center;
+      .line {
+        margin-left: 16px;
+        height: 100%;
+        border-left: 1px solid #666;
+      }
+      .close {
+        flex-shrink: 0;
+        padding-left: 16px;
+        display: inline-block;
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
   }
-
 </style>
