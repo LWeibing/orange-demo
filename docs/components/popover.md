@@ -3,17 +3,14 @@ title: Popover 弹出框
 sidebarDepth: 2
 ---
 # Popover 弹出框 
-常用的操作按钮
+点击/鼠标移入元素，弹出气泡式的卡片浮层。
 
-## 简单用法
+## 基础用法
 <ClientOnly>
-<button-demo/>
+<popover-demo/>
 </ClientOnly>
 
-## 组合用法
-<ClientOnly>
-<button-group-demo></button-group-demo>
-</ClientOnly>
+
 
 ## Popover 属性
 |   属性   |   说明   |  类型  |          可选值          | 默认值 |
