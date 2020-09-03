@@ -5,7 +5,7 @@ sidebarDepth: 2
 # Toast 消息提示 
 常用的操作按钮
 
-## 简单用法
+## 基本用法
 <ClientOnly>
 <button-demo/>
 </ClientOnly>
