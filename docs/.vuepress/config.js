@@ -7,8 +7,8 @@ module.exports = {
     nav: [
       {text: "主页", link: "/"},
       {text: "文档", link: "/components/button"},
-      {text: "github", link: "https://github.com/fzh5785/orange-demo/tree/gh-pages"},
-      {text: "gitee", link: "https://gitee.com/feng_zihao/orange-demo/tree/gh-pages/"},
+      {text: "github", link: "https://github.com/fzh5785/orange-demo"},
+      {text: "gitee", link: "https://gitee.com/feng_zihao/orange-demo"},
     ],
     sidebar: [
       {

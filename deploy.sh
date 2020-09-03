@@ -21,6 +21,6 @@ git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:fzh5785/orange-demo.git master:gh-pages
- git push -f git@gitee.com:feng_zihao/orange-demo.git master:gh-pages
+git push -f git@gitee.com:feng_zihao/orange-demo.git master:gh-pages
 
 cd -
