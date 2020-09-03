@@ -7,17 +7,18 @@ module.exports = {
     nav: [
       {text: "主页", link: "/"},
       {text: "文档", link: "/components/button"},
-      {text: "github", link: "https://github.com/fzh5785/orange-demo"},
-      {text: "gitee", link: ""},
+      {text: "github", link: "https://github.com/fzh5785/orange-demo/tree/gh-pages"},
+      {text: "gitee", link: "https://gitee.com/feng_zihao/orange-demo/tree/gh-pages/"},
     ],
     sidebar: [
       {
-        title: "入门",
-        children: ["/install/", "/fast-start/"],
+        title: "开始",
+        children: ["/introduce/"],
         collapsable: false,
       },
       {
         title: "组件",
+        collapsable: false,
         children: [
           "/components/button",
           "/components/collapse",

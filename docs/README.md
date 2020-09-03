@@ -1,11 +1,10 @@
 ---
 home: true
-lang: zh-CN
 heroImage: /assets/logo.svg
 heroText: Orange UI
 tagline: 一个基于 Vue + Sass 的 UI 框架
 actionText: 快速上手 →
-actionLink: /install/
+actionLink: /introduce/
 features:
 - title: Orange UI
   details: Orange UI 是一套基于 Vue2.0 的简易的UI框架，它包含一些常用的布局和控件，帮助开发者快速构筑移动端和PC端界面。
