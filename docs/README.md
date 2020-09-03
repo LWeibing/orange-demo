@@ -1,5 +1,6 @@
 ---
 home: true
+lang: zh-CN
 heroImage: /assets/logo.svg
 heroText: Orange UI
 tagline: 一个基于 Vue + Sass 的 UI 框架

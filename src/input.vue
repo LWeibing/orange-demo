@@ -62,10 +62,15 @@
           box-shadow: inset 0 1px 3px rgba(0,0,0,.5);
           outline: none;
         }
-        &[disabled],&[readOnly]{
+        &[disabled]{
           border-color: #bbb;
           color:#bbb;
           cursor: not-allowed;
+        }
+        &[readOnly]{
+          border-color: #bbb;
+          color:#bbb;
+          cursor: default;
         }
       }
     }
