@@ -2,6 +2,9 @@ module.exports = {
   base: "/orange-demo/",
   title: "Orange UI",
   description: "一个好用的UI框架",
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
   themeConfig: {
     logo: "assets/logo.svg",
     nav: [
